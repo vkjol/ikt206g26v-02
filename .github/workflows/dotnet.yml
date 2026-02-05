@@ -4,21 +4,29 @@ on: [push, pull_request]
 
 jobs:
   build:
-    
-    runs-on: ubuntu-slim
-    strategy: 
+    runs-on: ubuntu-latest
+
+    strategy:
       matrix:
-        dotnet-version: [10.0]
+        dotnet-version: [ '10.0.x' ]
+
     steps:
-      - uses: actions/checkout@v5
-      - name: Setup dotnet
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
-      - name: Install dependencies
+
+      - name: Restore dependencies
+        working-directory: ClassLibraryProjects
         run: dotnet restore
-      - name: Build
-        run: dotnet build --no-restore
-      - name: Test with the dotnet CLI
-        run: dotnet test --no-build
-        
+
+      - name: Build solution
+        working-directory: ClassLibraryProjects
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Run tests
+        working-directory: ClassLibraryProjects
+        run: dotnet test --no-build --verbosity normal
