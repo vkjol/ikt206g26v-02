@@ -34,3 +34,4 @@ c:\Users\47477\ikt206g26v-02\ClassLibraryProjects\ShowCase\obj\Debug\net10.0\ref
 c:\Users\47477\ikt206g26v-02\ClassLibraryProjects\ShowCase\obj\Debug\net10.0\ShowCase.pdb
 c:\Users\47477\ikt206g26v-02\ClassLibraryProjects\ShowCase\obj\Debug\net10.0\ShowCase.genruntimeconfig.cache
 c:\Users\47477\ikt206g26v-02\ClassLibraryProjects\ShowCase\obj\Debug\net10.0\ref\ShowCase.dll
+C:\Users\47477\ikt206g26v-02\ClassLibraryProjects\ShowCase\obj\Debug\net10.0\ShowCase.sourcelink.json
